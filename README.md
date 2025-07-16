@@ -67,3 +67,16 @@ export default tseslint.config([
   },
 ])
 ```
+
+## Password Gate (Development Lock)
+
+To enable or disable the password-protected landing page during development or preview deploys, use the following environment variable in your `.env` file:
+
+```
+VITE_SHOW_SITE=true
+```
+
+- When `VITE_SHOW_SITE=false` (default): The site is locked behind a password gate. Use password `Modulab` to unlock.
+- When `VITE_SHOW_SITE=true`: The password gate is disabled and the site is fully accessible.
+
+Add this to your `.env` file in the project root as needed.
