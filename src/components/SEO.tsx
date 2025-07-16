@@ -15,7 +15,7 @@ const SEO = ({ title, description, image }: SEOProps) => (
     <meta property="og:description" content={description} />
     {image && <meta property="og:image" content={image} />}
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Modulab" />
+    <meta property="og:site_name" content="Modulab – Build Smarter" />
     {/* Twitter Card */}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
