@@ -1,24 +1,21 @@
-import React from 'react';
 import Card from './ui/Card';
+import Chip from './ui/Chip';
 
-const paragraphs = [
-  'Modulab is a collective of builders, designers, and technologists passionate about turning bold ideas into reality.',
-  'We believe in rapid prototyping, creative exploration, and a relentless pursuit of quality.',
-  'Our mission is to empower founders and teams to launch, learn, and iterate faster than ever.'
-];
-
-const About: React.FC = () => (
-  <section id="about" className="">
-    <Card className="w-full mx-auto">
-      <h2 className="text-[40px] md:text-[64px] font-semibold text-grey-80 leading-tight mb-3">Who We Are</h2>
-      <div className="space-y-4 mb-6">
-        {paragraphs.map((p, i) => (
-          <p key={i} className="text-[18px] text-grey-60 max-w-2xl">{p}</p>
-        ))}
-      </div>
-      <blockquote className="italic text-[18px] text-grey-60 border-l-4 border-grey-30 pl-6 md:pl-8 max-w-md">“The best way to predict the future is to invent it.”</blockquote>
+const WhoWeAre = () => (
+  <section className="w-full mt-12">
+    <Card className="w-full max-w-4xl mx-auto flex flex-col items-start bg-white p-8 md:p-12">
+      <Chip size="xs" className="mb-4">Who We Are</Chip>
+      <h2 className="text-[32px] md:text-[40px] font-semibold text-grey-80 mb-4">Building, Together.</h2>
+      <p className="text-grey-60 text-[18px] max-w-xl mb-4">
+        Modulab is a collective of engineers, designers, and builders. We turn ideas into robust products—combining technical depth with creative clarity. From MVP to scale, we’re your partners in building what’s next.
+      </p>
+      <ul className="list-none pl-0 space-y-2 text-grey-60 text-[16px]">
+        <li>• Built by people who care about quality and speed.</li>
+        <li>• Trusted by startups and established teams alike.</li>
+        <li>• Always hands-on, always shipping.</li>
+      </ul>
     </Card>
   </section>
 );
 
-export default About; 
+export default WhoWeAre; 

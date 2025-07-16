@@ -11,56 +11,55 @@ const MobileNav: React.FC<MobileNavProps> = ({ navLinks, contactUrl }) => {
   return (
     <div className="md:hidden">
       <button
-        className="p-2 rounded focus:outline-none focus:ring-2 focus:ring-[#3b338b]"
+        className={`p-1 rounded-[6px] focus:outline-none bg-transparent transition-all duration-200 active:bg-transparent focus:bg-transparent hover:bg-transparent`}
         onClick={() => setOpen(!open)}
-        aria-label="Open navigation menu"
+        aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
       >
-        <svg className="h-6 w-6 text-[#3b338b]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+        <span className="block relative w-[18px] h-[18px]">
+          <span className={`absolute left-0 top-1/2 w-[18px] h-0.5 bg-[#3b338b] rounded transition-all duration-200 ${open ? 'rotate-45 top-2.5' : '-translate-y-2'}`}></span>
+          <span className={`absolute left-0 top-1/2 w-[18px] h-0.5 bg-[#3b338b] rounded transition-all duration-200 ${open ? 'opacity-0' : ''}`}></span>
+          <span className={`absolute left-0 top-1/2 w-[18px] h-0.5 bg-[#3b338b] rounded transition-all duration-200 ${open ? '-rotate-45 top-2.5' : 'translate-y-2'}`}></span>
+        </span>
       </button>
       {open && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-40" onClick={() => setOpen(false)}>
+        <div className="absolute left-0 right-0 z-50" style={{ top: 'calc(100% + 10px)' }}>
           <div
-            className="absolute top-0 right-0 w-64 h-full bg-white shadow-lg p-6 flex flex-col space-y-6 animate-slide-in"
+            className="mx-[14px] w-auto rounded-[6px] bg-white shadow-2xl border border-grey-20 p-1 flex flex-col items-center animate-dropdown"
             onClick={e => e.stopPropagation()}
           >
-            <button className="self-end mb-4" onClick={() => setOpen(false)} aria-label="Close menu">
-              <svg className="h-6 w-6 text-[#3b338b]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-            {navLinks.map(link => (
+            <div className="flex flex-col w-full gap-[6px] items-center">
+              {navLinks.map(link => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="w-full text-grey-60 font-semibold text-[14px] px-4 py-2 rounded-full transition-colors hover:bg-grey-20 hover:text-[#3b338b] text-center"
+                  onClick={() => setOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
               <a
-                key={link.label}
-                href={link.href}
-                className="text-lg font-medium text-[#3b338b] hover:text-[#f8bc04] transition-colors"
+                href={contactUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full text-grey-60 font-semibold text-[14px] px-4 py-2 rounded-full transition-colors hover:bg-grey-20 hover:text-[#3b338b] text-center"
                 onClick={() => setOpen(false)}
               >
-                {link.label}
+                Contact
               </a>
-            ))}
-            <a
-              href={contactUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 px-4 py-2 bg-[#f8bc04] text-[#3b338b] rounded font-semibold shadow hover:bg-[#ffe082] transition"
-              onClick={() => setOpen(false)}
-            >
-              Contact
-            </a>
+            </div>
           </div>
+          <style>{`
+            @keyframes dropdown {
+              from { transform: translateY(-16px) scale(0.98); opacity: 0; }
+              to { transform: translateY(0) scale(1); opacity: 1; }
+            }
+            .animate-dropdown {
+              animation: dropdown 0.18s cubic-bezier(0.4,0,0.2,1);
+            }
+          `}</style>
         </div>
       )}
-      <style>{`
-        @keyframes slide-in {
-          from { transform: translateX(100%); }
-          to { transform: translateX(0); }
-        }
-        .animate-slide-in {
-          animation: slide-in 0.2s ease-out;
-        }
-      `}</style>
     </div>
   );
 };

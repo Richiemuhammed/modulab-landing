@@ -56,7 +56,7 @@ const TaskCardWithComment: React.FC = () => {
 const AnimatedProjectFeed: React.FC = () => {
   return (
     // Outer container for the animated feed (sizing and layout)
-    <div className="relative w-full max-w-[480px] h-[380px] md:h-[420px] bg-transparent rounded-2xl flex flex-col justify-center items-center overflow-visible p-0">
+    <div className="relative w-full max-w-[480px] bg-transparent rounded-2xl flex flex-col justify-center items-center overflow-visible p-0">
       {/* Render the first animation sequence: TaskCardWithComment */}
       <TaskCardWithComment />
     </div>

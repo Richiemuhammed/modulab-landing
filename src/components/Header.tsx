@@ -21,10 +21,12 @@ const Header: React.FC = () => {
 
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 border-b border-grey-30 ${scrolled ? 'bg-white/30 backdrop-blur-sm' : ''}`}>
-      <div className="max-w-[1320px] mx-auto flex items-center justify-between py-4 border-l border-r border-grey-30 pl-[20px] pr-[20px]">
+      <div className="max-w-[1320px] mx-auto flex items-center justify-between py-4 border-l border-r border-grey-30 pl-[20px] pr-[20px] h-[64px]">
         {/* Logo left */}
-        <div className="flex items-center flex-shrink-0">
-          <Logo className="h-4 w-auto" />
+        <div className="flex items-center flex-shrink-0 h-full">
+          <div className="flex items-center h-full">
+            <Logo className="h-6 w-auto" />
+          </div>
         </div>
         {/* Nav center (desktop) */}
         <nav className="hidden md:flex flex-1 justify-center space-x-5">
@@ -32,7 +34,7 @@ const Header: React.FC = () => {
             <a
               key={link.label}
               href={link.href}
-              className="text-grey-60 font-semibold text-[14px] px-4 py-2 rounded-full transition-colors hover:bg-grey-20"
+              className="text-grey-60 font-semibold text-[14px] px-4 py-2 rounded-full transition-colors hover:bg-grey-20 hover:text-[#3b338b]"
             >
               {link.label}
             </a>

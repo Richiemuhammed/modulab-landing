@@ -20,8 +20,8 @@ const socials = [
 ];
 
 const Footer: React.FC = () => (
-  <footer className="text-[#3b338b] py-12 px-4 border-t border-default">
-    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
+  <footer className="text-[#3b338b] pt-12 px-4 border-t border-grey-30 w-full flex flex-col" style={{ borderTopWidth: '1px', borderColor: '#e5e7eb' }}>
+    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-8 w-full">
       {/* Logo and tagline */}
       <div className="flex flex-col items-center md:items-start mb-6 md:mb-0">
         <Logo className="h-5 mb-2" />
@@ -41,15 +41,18 @@ const Footer: React.FC = () => (
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-8 h-8 flex items-center justify-center rounded transition-colors hover:bg-grey-20"
-            style={{ fontSize: '16px', borderRadius: '4px' }}
+            className="w-8 h-8 flex items-center justify-center"
+            style={{ fontSize: '16px', borderRadius: '4px', color: '#3b338b', background: '#f8bc04' }}
           >
-            {social.icon}
+            {React.cloneElement(social.icon, { className: 'w-[14px] h-[14px]', style: { color: '#3b338b' } })}
           </a>
         ))}
       </div>
     </div>
-    <div className="mt-8 text-center text-xs text-white/60">© {new Date().getFullYear()} Modulab. Built with vibes.</div>
+    <div className="border-t border-grey-30 mt-8 w-full"></div>
+    <div className="mt-4 mb-[20px] text-center text-xs font-medium text-grey-60 tracking-tight">
+      © {new Date().getFullYear()} Modulab. Built with <span className="text-[#f44336]" role="img" aria-label="love">♥</span> by Modulab.
+    </div>
   </footer>
 );
 

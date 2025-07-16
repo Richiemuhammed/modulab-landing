@@ -26,8 +26,8 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   const base = `inline-flex items-center font-semibold rounded-full transition-colors focus:outline-none ${sizeClasses[size]}`;
   const variants = {
-    primary: 'bg-[#3b338b] text-white hover:bg-[#504fa1] border-none',
-    outline: 'bg-white text-grey-80 font-semibold text-[14px] px-4 py-2 rounded-full border border-grey-30 hover:bg-grey-20 hover:border-grey-40',
+    primary: 'bg-[#3b338b] text-white hover:bg-[#4c43b3] hover:text-white border-none',
+    outline: 'bg-white text-grey-60 font-semibold text-[14px] px-4 py-2 rounded-full transition-colors hover:bg-grey-20 hover:text-[#3b338b]',
   };
   return (
     <a href={href} className={`${base} ${variants[variant]} ${className}`} {...props}>
