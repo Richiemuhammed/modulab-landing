@@ -55,10 +55,10 @@ const FAQ: React.FC = () => {
 
         <div className="max-w-3xl mx-auto space-y-2">
           {faqs.map((faq, index) => (
-            <div key={index} className={`border border-grey-20 rounded-[8px] overflow-hidden transition-colors ${openIndex === index ? 'bg-white' : 'bg-grey-5'}`}>
+            <div key={index} className="border border-grey-20 rounded-[8px] overflow-hidden transition-colors bg-white">
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-4 text-left hover:bg-grey-5 transition-colors focus:outline-none focus:ring-0 focus:border-0 focus:shadow-none"
+                className="w-full flex items-center justify-between p-4 text-left hover:bg-grey-5 transition-colors focus:outline-none focus:ring-0 focus:border-0 focus:shadow-none bg-transparent"
                 style={{ outline: 'none', border: 'none' }}
               >
                 <h3 className="text-grey-80 text-[16px] font-semibold pr-4">
