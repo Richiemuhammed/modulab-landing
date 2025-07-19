@@ -28,7 +28,7 @@ export default function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-[#3b338b] transition-opacity duration-500 ${anim ? 'opacity-100' : 'opacity-0'}`}
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-[#242424] transition-opacity duration-500 ${anim ? 'opacity-100' : 'opacity-0'}`}
       style={{ minHeight: '100vh' }}
     >
       <form
@@ -37,7 +37,7 @@ export default function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
         style={{ boxShadow: '0 8px 32px rgba(59,51,139,0.15)' }}
       >
         <div className="text-4xl mb-2" role="img" aria-label="lock">🔒</div>
-        <h1 className="text-2xl font-bold mb-1 text-[#3b338b]">Modulab Access</h1>
+        <h1 className="text-2xl font-bold mb-1 text-[#242424]">Modulab Access</h1>
         <p className="text-gray-600 mb-6 text-center">Enter the password to view the site.</p>
         <input
           ref={inputRef}

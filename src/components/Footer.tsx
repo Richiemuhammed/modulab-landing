@@ -2,8 +2,8 @@ import React from 'react';
 import Logo from './Logo';
 
 const navLinks = [
-  { label: 'Work', href: '#work' },
-  { label: 'About', href: '#about' },
+  { label: 'FAQS', href: '#process' },
+  { label: 'Process', href: '#faq' },
   { label: 'Contact', href: 'mailto:hello@modulab.studio' },
 ];
 
@@ -19,18 +19,27 @@ const socials = [
   ) },
 ];
 
+const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
+  <a
+    href={href}
+    className="text-grey-70 font-semibold text-[16px] px-4 py-2 rounded-full transition-colors hover:bg-grey-20 hover:text-[#242424]"
+  >
+    {children}
+  </a>
+);
+
 const Footer: React.FC = () => (
-  <footer className="text-[#3b338b] pt-12 px-4 border-t border-grey-30 w-full flex flex-col" style={{ borderTopWidth: '1px', borderColor: '#e5e7eb' }}>
+  <footer className="text-[#242424] pt-12 px-4 border-t border-grey-30 w-full flex flex-col" style={{ borderTopWidth: '1px', borderColor: '#e5e7eb' }}>
     <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-8 w-full">
       {/* Logo and tagline */}
       <div className="flex flex-col items-center md:items-start mb-6 md:mb-0">
         <Logo className="h-5 mb-2" />
-        <span className="text-sm text-white/80">A studio for bold ideas.</span>
+        <span className="text-sm text-[#242424]">A studio for bold ideas.</span>
       </div>
       {/* Nav links */}
       <nav className="flex flex-col items-center gap-3 md:gap-3 md:flex-row md:justify-center">
         {navLinks.map(link => (
-          <a key={link.label} href={link.href} className="text-grey-60 font-semibold text-[14px] px-4 py-2 rounded-full transition-colors hover:bg-grey-20">{link.label}</a>
+          <NavLink key={link.label} href={link.href}>{link.label}</NavLink>
         ))}
       </nav>
       {/* Socials */}
@@ -42,15 +51,15 @@ const Footer: React.FC = () => (
             target="_blank"
             rel="noopener noreferrer"
             className="w-8 h-8 flex items-center justify-center"
-            style={{ fontSize: '16px', borderRadius: '4px', color: '#3b338b', background: '#f8bc04' }}
+            style={{ fontSize: '16px', borderRadius: '4px', color: 'white', background: '#242424' }}
           >
-            {React.cloneElement(social.icon, { className: 'w-[14px] h-[14px]', style: { color: '#3b338b' } })}
+            {React.cloneElement(social.icon, { className: 'w-[14px] h-[14px]', style: { color: 'white' } })}
           </a>
         ))}
       </div>
     </div>
     <div className="border-t border-grey-30 mt-8 w-full"></div>
-    <div className="mt-4 mb-[20px] text-center text-xs font-medium text-grey-60 tracking-tight">
+    <div className="mt-4 mb-[20px] text-center text-[14px] font-medium text-grey-60 tracking-tight">
       © {new Date().getFullYear()} Modulab. Built with <span className="text-[#f44336]" role="img" aria-label="love">♥</span> by Modulab.
     </div>
   </footer>

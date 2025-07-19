@@ -4,9 +4,18 @@ import MobileNav from './MobileNav';
 import Button from './ui/Button';
 
 const navLinks = [
-  { label: 'Work', href: '#work' },
-  { label: 'About', href: '#about' },
+  { label: 'FAQS', href: '#process' },
+  { label: 'Process', href: '#faq' },
 ];
+
+const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
+  <a
+    href={href}
+    className="text-grey-70 font-semibold text-[16px] px-4 py-2 rounded-full transition-colors hover:bg-grey-20 hover:text-[#242424]"
+  >
+    {children}
+  </a>
+);
 
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -31,13 +40,7 @@ const Header: React.FC = () => {
         {/* Nav center (desktop) */}
         <nav className="hidden md:flex flex-1 justify-center space-x-5">
           {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-grey-60 font-semibold text-[14px] px-4 py-2 rounded-full transition-colors hover:bg-grey-20 hover:text-[#3b338b]"
-            >
-              {link.label}
-            </a>
+            <NavLink key={link.label} href={link.href}>{link.label}</NavLink>
           ))}
         </nav>
         {/* CTA right (desktop) */}

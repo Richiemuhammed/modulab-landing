@@ -1,7 +1,7 @@
+@import 'non.geist';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'non.geist';
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

@@ -16,9 +16,9 @@ const MobileNav: React.FC<MobileNavProps> = ({ navLinks, contactUrl }) => {
         aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
       >
         <span className="block relative w-[18px] h-[18px]">
-          <span className={`absolute left-0 top-1/2 w-[18px] h-0.5 bg-[#3b338b] rounded transition-all duration-200 ${open ? 'rotate-45 top-2.5' : '-translate-y-2'}`}></span>
-          <span className={`absolute left-0 top-1/2 w-[18px] h-0.5 bg-[#3b338b] rounded transition-all duration-200 ${open ? 'opacity-0' : ''}`}></span>
-          <span className={`absolute left-0 top-1/2 w-[18px] h-0.5 bg-[#3b338b] rounded transition-all duration-200 ${open ? '-rotate-45 top-2.5' : 'translate-y-2'}`}></span>
+          <span className={`absolute left-0 top-1/2 w-[18px] h-0.5 bg-[#242424] rounded transition-all duration-200 ${open ? 'rotate-45 top-2.5' : '-translate-y-2'}`}></span>
+          <span className={`absolute left-0 top-1/2 w-[18px] h-0.5 bg-[#242424] rounded transition-all duration-200 ${open ? 'opacity-0' : ''}`}></span>
+          <span className={`absolute left-0 top-1/2 w-[18px] h-0.5 bg-[#242424] rounded transition-all duration-200 ${open ? '-rotate-45 top-2.5' : 'translate-y-2'}`}></span>
         </span>
       </button>
       {open && (
@@ -32,7 +32,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ navLinks, contactUrl }) => {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="w-full text-grey-60 font-semibold text-[14px] px-4 py-2 rounded-full transition-colors hover:bg-grey-20 hover:text-[#3b338b] text-center"
+                  className="w-full text-grey-60 font-semibold text-[14px] px-4 py-2 rounded-full transition-colors hover:bg-grey-20 hover:text-[#242424] text-center"
                   onClick={() => setOpen(false)}
                 >
                   {link.label}
@@ -42,7 +42,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ navLinks, contactUrl }) => {
                 href={contactUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full text-grey-60 font-semibold text-[14px] px-4 py-2 rounded-full transition-colors hover:bg-grey-20 hover:text-[#3b338b] text-center"
+                className="w-full text-grey-60 font-semibold text-[14px] px-4 py-2 rounded-full transition-colors hover:bg-grey-20 hover:text-[#242424] text-center"
                 onClick={() => setOpen(false)}
               >
                 Contact
