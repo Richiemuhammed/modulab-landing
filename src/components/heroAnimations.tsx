@@ -92,23 +92,23 @@ const HeroAnimations: React.FC = () => {
   const showToast = step === 9;
 
   return (
-    <div className="relative w-full max-w-md h-[400px] aspect-video overflow-hidden flex items-center justify-center bg-transparent mx-auto">
+    <div className="relative w-full max-w-md sm:max-w-lg md:max-w-xl h-[350px] sm:h-[400px] md:h-[450px] overflow-hidden flex items-center justify-center bg-transparent mx-auto">
       {/* Dashboard Mockup */}
       <div className="absolute inset-0 flex flex-col justify-center items-center p-4 md:p-6">
         {/* Header */}
-        <div className="w-32 md:w-40 h-6 md:h-8 bg-white border border-grey-30 rounded-[8px] shadow-sm flex items-center px-2 md:px-3 mb-2">
+        <div className="w-36 sm:w-40 md:w-48 h-6 sm:h-7 md:h-9 bg-white border border-grey-30 rounded-[8px] shadow-sm flex items-center px-2 md:px-3 mb-2">
           <div className="w-1.5 md:w-2 h-1.5 md:h-2 bg-[#242424] rounded-full mr-1.5 md:mr-2"></div>
-          <div className="text-[10px] md:text-[12px] text-grey-70 font-medium">Dashboard</div>
+          <div className="text-[10px] sm:text-[11px] md:text-[13px] text-grey-70 font-medium">Dashboard</div>
         </div>
         {/* Content */}
-        <div className="w-56 md:w-72 h-12 md:h-16 bg-white border border-grey-30 rounded-[8px] shadow-sm mb-3 md:mb-4 flex flex-col justify-center px-3 md:px-4 space-y-1.5 md:space-y-2">
+        <div className="w-60 sm:w-68 md:w-80 h-12 sm:h-14 md:h-18 bg-white border border-grey-30 rounded-[8px] shadow-sm mb-3 md:mb-4 flex flex-col justify-center px-3 md:px-4 space-y-1.5 md:space-y-2">
           <div className="h-1.5 md:h-2 bg-grey-20 rounded w-3/4"></div>
           <div className="h-1.5 md:h-2 bg-grey-20 rounded w-1/2"></div>
           <div className="h-1.5 md:h-2 bg-grey-20 rounded w-2/3"></div>
         </div>
         {/* Create Project Button */}
         <motion.button
-          className="relative w-36 md:w-48 h-8 md:h-10 bg-[#242424] text-white text-[11px] md:text-[14px] rounded-[8px] font-medium shadow-sm flex items-center justify-center transition-all duration-200 hover:bg-[#1a1a1a] border-0 hover:border-0 focus:outline-none focus:ring-0"
+          className="relative w-40 sm:w-44 md:w-56 h-8 sm:h-9 md:h-11 bg-[#242424] text-white text-[11px] sm:text-[12px] md:text-[15px] rounded-[8px] font-medium shadow-sm flex items-center justify-center transition-all duration-200 hover:bg-[#1a1a1a] border-0 hover:border-0 focus:outline-none focus:ring-0"
           animate={step === 2 ? { scale: [1, 0.95, 1.05, 1] } : { scale: 1 }}
           transition={{ duration: 0.35 }}
         >
@@ -126,7 +126,7 @@ const HeroAnimations: React.FC = () => {
           transition={{ duration: 0.4 }}
         >
           <motion.div
-            className="bg-white border border-grey-30 rounded-[12px] p-4 md:p-6 shadow-lg w-64 md:w-80 max-w-[95vw]"
+            className="bg-white border border-grey-30 rounded-[12px] p-4 sm:p-5 md:p-6 shadow-lg w-64 sm:w-72 md:w-88 max-w-[85vw]"
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 40, opacity: 0 }}

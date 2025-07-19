@@ -8,8 +8,8 @@ import HeroAnimations from './heroAnimations';
 const Hero: React.FC = () => (
   <section className="w-full">
     {/* Card with two columns: left (text), right (animated feed) */}
-    <Card className="w-full max-w-7xl bg-white p-6 md:p-8 lg:p-12">
-      <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-6 md:gap-8">
+    <Card className="w-full max-w-7xl bg-white p-4 md:p-6 lg:p-8">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-4 md:gap-6 lg:gap-8">
         {/* Left: Text content */}
         <div className="flex-1 flex flex-col items-start justify-center text-left w-full lg:w-auto">
           <Chip size="xs" className="mb-4 flex items-center gap-1">
@@ -32,9 +32,7 @@ const Hero: React.FC = () => (
         
         {/* Right: Animated Project Feed */}
         <div className="flex-1 flex items-center justify-center w-full max-w-md lg:max-w-lg mx-auto">
-          <div className="w-full aspect-[4/3] max-h-[400px]">
-            <HeroAnimations />
-          </div>
+          <HeroAnimations />
         </div>
       </div>
     </Card>
