@@ -39,7 +39,7 @@ const FAQ: React.FC = () => {
 
   return (
     <section id="faq" className="w-full">
-      <Card className="w-full max-w-7xl mx-auto bg-white p-6 md:p-8 lg:p-12 pt-0">
+      <Card className="w-full max-w-7xl mx-auto bg-white p-6 md:p-8 lg:p-12">
         <div className="text-center mb-6">
           <Chip size="xs" className="mb-4 flex items-center gap-1">
             <IconHelp size={14} />
