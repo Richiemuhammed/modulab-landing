@@ -13,10 +13,10 @@ const FinalCTA: React.FC = () => (
           Whether it's vibe coding, no-code, or a mix of both—let's build something amazing together.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button href="https://cal.com/" variant="primary" size="md" style={{ minWidth: '200px' }}>
+          <Button href="https://cal.com/richie-muhammed-vwayuh" variant="primary" size="md" style={{ minWidth: '200px' }}>
             Book a Call
           </Button>
-          <Button href="mailto:hello@modulab.com" variant="outline" size="md" style={{ minWidth: '200px' }}>
+                      <Button href="https://cal.com/richie-muhammed-vwayuh" variant="outline" size="md" style={{ minWidth: '200px' }}>
             Send a Message
           </Button>
         </div>

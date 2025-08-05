@@ -4,8 +4,8 @@ import MobileNav from './MobileNav';
 import Button from './ui/Button';
 
 const navLinks = [
-  { label: 'FAQS', href: '#process' },
-  { label: 'Process', href: '#faq' },
+  { label: 'FAQS', href: '#faq' },
+  { label: 'Process', href: '#process' },
 ];
 
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
@@ -45,11 +45,11 @@ const Header: React.FC = () => {
         </nav>
         {/* CTA right (desktop) */}
         <div className="hidden md:flex items-center">
-          <Button href="mailto:hello@modulab.studio" variant="primary" size="sm" className="ml-4 text-[14px]">Contact</Button>
+          <Button href="https://cal.com/richie-muhammed-vwayuh" variant="primary" size="sm" className="ml-4 text-[14px]">Contact</Button>
         </div>
         {/* Mobile nav */}
         <div className="md:hidden flex items-center">
-          <MobileNav navLinks={navLinks} contactUrl="mailto:hello@modulab.studio" />
+          <MobileNav navLinks={navLinks} contactUrl="https://cal.com/richie-muhammed-vwayuh" />
         </div>
       </div>
     </header>

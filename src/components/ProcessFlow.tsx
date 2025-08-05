@@ -30,7 +30,7 @@ const ProcessFlow: React.FC = () => {
         <p className="text-grey-60 text-[16px] md:text-[18px] max-w-2xl mx-auto leading-relaxed mb-8">
           Our streamlined process combines vibe coding and no-code tools to turn your vision into a polished product, fast.
         </p>
-        <Button href="https://cal.com/" variant="primary" size="sm" className="flex items-center gap-2">
+        <Button href="https://cal.com/richie-muhammed-vwayuh" variant="primary" size="sm" className="flex items-center gap-2">
           Start your project
           <IconArrowRight size={16} />
         </Button>

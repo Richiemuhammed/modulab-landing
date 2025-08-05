@@ -28,6 +28,7 @@ const SEO = ({ title, description, image, faqData }: SEOProps) => {
       <meta name="keywords" content="vibe coding, no-code development, AI-assisted development, web development, landing pages, MVP development, startup development" />
       <meta name="author" content="Modulab" />
       <meta name="robots" content="index, follow" />
+      <link rel="canonical" href={window.location.href} />
       
       {/* Open Graph */}
       <meta property="og:title" content={title} />

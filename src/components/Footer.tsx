@@ -2,9 +2,9 @@ import React from 'react';
 import Logo from './Logo';
 
 const navLinks = [
-  { label: 'FAQS', href: '#process' },
-  { label: 'Process', href: '#faq' },
-  { label: 'Contact', href: 'mailto:hello@modulab.studio' },
+  { label: 'FAQS', href: '#faq' },
+  { label: 'Process', href: '#process' },
+  { label: 'Contact', href: 'https://cal.com/richie-muhammed-vwayuh' },
 ];
 
 const socials = [

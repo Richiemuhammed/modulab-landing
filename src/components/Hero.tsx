@@ -23,7 +23,7 @@ const Hero: React.FC = () => (
             We build modern frontends with vibe coding and no-code solutions for fast-moving teams.
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-4">
-            <Button href="https://cal.com/" variant="primary" size="sm" className="flex items-center gap-2">
+            <Button href="https://cal.com/richie-muhammed-vwayuh" variant="primary" size="sm" className="flex items-center gap-2">
               Start your project
               <IconArrowRight size={16} />
             </Button>
