@@ -10,28 +10,12 @@ import SEO from '../components/SEO';
 // FAQ data for SEO
 const faqData = [
   {
-    question: "Can I actually trust AI to build my product?",
-    answer: "Not by itself. But with us? Yeah. We don't just press a button and pray. We use AI to speed things up, then step in — checking, fixing, refining. It's human-led, AI-assisted. The tech helps, but the vision? That's us."
+    question: "What's the risk of working with you?",
+    answer: "We're transparent about being a small team. The risk is we might not be the right fit for massive enterprise projects. But for startups and growing companies, we offer speed, flexibility, and personal attention that big agencies can't match."
   },
   {
-    question: "What if I need changes later or something breaks?",
-    answer: "You're good. Everything we build is clean, readable code — not some cursed AI mess no dev wants to touch. Whether it's us or someone else, your project's future-proof."
-  },
-  {
-    question: "Is this faster than hiring a dev shop?",
-    answer: "By miles. Traditional agencies move like molasses. We move like caffeine. AI helps us skip the grunt work and focus on what matters — clean builds, shipped fast, without cutting corners."
-  },
-  {
-    question: "If AI is involved, how do you make sure it's actually good?",
-    answer: "Because we don't trust AI blindly. We test. We tweak. We use judgment. We're not just engineers — we're builders. We know when something's off, and we don't ship trash."
-  },
-  {
-    question: "So this isn't no-code?",
-    answer: "Nope. This is post-code. No-code is clicking boxes. We write real code — we just do it faster, with AI in our corner. It's code with vibes, not limits."
-  },
-  {
-    question: "Who's behind all this — AI or you?",
-    answer: "Both. But we're in charge. Think of AI like a fast assistant. We give it direction, clean up the results, and ship products that feel human. 'Cause they are."
+    question: "How fast can you ship?",
+    answer: "With no-code tools, we can have your MVP live in days, not months. External pages with custom code take 1-2 weeks. The beauty of our approach is you see progress immediately and can iterate based on real user feedback."
   }
 ];
 

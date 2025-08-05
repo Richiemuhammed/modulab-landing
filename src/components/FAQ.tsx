@@ -5,28 +5,12 @@ import { IconChevronDown, IconHelp } from '@tabler/icons-react';
 
 const faqs = [
   {
-    question: "What is vibe coding?",
-    answer: "Vibe coding is our approach to building software that feels effortless and natural. We focus on clean, modern code using the right tools and techniques - not just the latest trends. It's about creating solutions that work beautifully and scale smoothly."
-  },
-  {
     question: "What's the risk of working with you?",
     answer: "We're transparent about being a small team. The risk is we might not be the right fit for massive enterprise projects. But for startups and growing companies, we offer speed, flexibility, and personal attention that big agencies can't match."
   },
   {
-    question: "How do you actually build projects?",
-    answer: "We start with no-code tools for complex projects to get you to market fast. Then we build coded, SEO-optimized external pages. Finally, we can take your app piece by piece into custom code if you want to scale further. It's a gradual evolution approach."
-  },
-  {
-    question: "No-code first, then real code?",
-    answer: "Exactly. We use no-code for speed and validation, then migrate to custom code for performance and scale. This approach lets you launch quickly, validate your idea, and then invest in the right technical foundation."
-  },
-  {
     question: "How fast can you ship?",
     answer: "With no-code tools, we can have your MVP live in days, not months. External pages with custom code take 1-2 weeks. The beauty of our approach is you see progress immediately and can iterate based on real user feedback."
-  },
-  {
-    question: "What if I want to scale beyond no-code?",
-    answer: "Perfect! That's exactly our sweet spot. We can gradually migrate your app from no-code to custom code, piece by piece. This gives you the best of both worlds - speed to market and the flexibility to scale when you're ready."
   }
 ];
 
