@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Geist Variable', 'sans-serif'],
+        sans: ['Space Grotesk', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         card: '12px',
@@ -24,8 +24,12 @@ export default {
           70: '#5c5f66',
           80: '#23262f',
         },
-        primary: '#3b338b',
-        accent: '#f8bc04',
+        primary: '#433b90',
+        accent: '#f4bc08',
+        modulab: {
+          purple: '#433b90',
+          yellow: '#f4bc08',
+        },
       },
       borderColor: {
         DEFAULT: '#e1e2e3', // border-default

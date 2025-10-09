@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from './Logo';
+import Card from './ui/Card';
 
 const navLinks = [
   { label: 'FAQS', href: '#faq' },
@@ -22,46 +23,75 @@ const socials = [
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <a
     href={href}
-    className="text-grey-70 font-semibold text-[16px] px-4 py-2 rounded-full transition-colors hover:bg-grey-20 hover:text-[#242424]"
+    className="text-grey-30 font-semibold text-[16px] px-4 py-2 rounded-full transition-colors hover:bg-grey-70 hover:text-white"
   >
     {children}
   </a>
 );
 
 const Footer: React.FC = () => (
-  <footer className="text-[#242424] pt-12 px-4 border-t border-grey-30 w-full flex flex-col" style={{ borderTopWidth: '1px', borderColor: '#e5e7eb' }}>
-    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-8 w-full">
-      {/* Logo and tagline */}
-      <div className="flex flex-col items-center md:items-start mb-6 md:mb-0">
-        <Logo className="h-5 mb-2" />
-        <span className="text-sm text-[#242424]">A studio for bold ideas.</span>
+  <footer className="w-full">
+    <Card className="w-full max-w-7xl mx-auto !bg-[#242424] p-8 md:p-12 lg:p-16">
+      {/* Main footer content */}
+      <div className="flex flex-col lg:flex-row items-start justify-between gap-12 mb-12">
+        {/* Logo and tagline */}
+        <div className="flex flex-col items-start">
+          <Logo className="h-6 mb-3" />
+          <span className="text-sm text-grey-30 leading-relaxed">A studio for bold ideas.</span>
+        </div>
+
+        {/* Footer links organized in columns */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 w-full lg:w-auto">
+          {/* Products */}
+          <div className="flex flex-col gap-3">
+            <span className="text-sm font-semibold text-white mb-2">Products</span>
+            <a href="#products" className="text-sm text-grey-30 hover:text-white transition-colors">Flaire</a>
+            <a href="#products" className="text-sm text-grey-30 hover:text-white transition-colors">Lyra</a>
+            <a href="#products" className="text-sm text-grey-30 hover:text-white transition-colors">What's Next</a>
+          </div>
+
+          {/* Company */}
+          <div className="flex flex-col gap-3">
+            <span className="text-sm font-semibold text-white mb-2">Company</span>
+            <a href="#about" className="text-sm text-grey-30 hover:text-white transition-colors">About</a>
+            <a href="#process" className="text-sm text-grey-30 hover:text-white transition-colors">Process</a>
+            <a href="mailto:hello@modulab.com" className="text-sm text-grey-30 hover:text-white transition-colors">Contact</a>
+          </div>
+
+          {/* Connect */}
+          <div className="flex flex-col gap-3">
+            <span className="text-sm font-semibold text-white mb-2">Connect</span>
+            <a href="https://twitter.com/modulab" target="_blank" rel="noopener noreferrer" className="text-sm text-grey-30 hover:text-white transition-colors">Twitter</a>
+            <a href="https://linkedin.com/company/modulab" target="_blank" rel="noopener noreferrer" className="text-sm text-grey-30 hover:text-white transition-colors">LinkedIn</a>
+            <a href="mailto:hello@modulab.com" className="text-sm text-grey-30 hover:text-white transition-colors">Email</a>
+          </div>
+        </div>
       </div>
-      {/* Nav links */}
-      <nav className="flex flex-col items-center gap-3 md:gap-3 md:flex-row md:justify-center">
-        {navLinks.map(link => (
-          <NavLink key={link.label} href={link.href}>{link.label}</NavLink>
-        ))}
-      </nav>
-      {/* Socials */}
-      <div className="flex justify-center md:justify-end gap-3 mt-6 md:mt-0">
-        {socials.map(social => (
-          <a
-            key={social.label}
-            href={social.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-8 h-8 flex items-center justify-center"
-            style={{ fontSize: '16px', borderRadius: '4px', color: 'white', background: '#242424' }}
-          >
-            {React.cloneElement(social.icon, { className: 'w-[14px] h-[14px]', style: { color: 'white' } })}
-          </a>
-        ))}
+
+      {/* Bottom section */}
+      <div className="border-t border-grey-70 pt-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="text-sm text-grey-30">
+            © {new Date().getFullYear()} Modulab. Built with <span className="text-red-400" role="img" aria-label="love">♥</span> by Modulab.
+          </div>
+          
+          {/* Social icons */}
+          <div className="flex gap-4">
+            {socials.map(social => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 flex items-center justify-center bg-grey-70 rounded-md transition-colors hover:bg-grey-50"
+              >
+                {React.cloneElement(social.icon, { className: 'w-4 h-4', style: { color: 'white' } })}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
-    <div className="border-t border-grey-30 mt-8 w-full"></div>
-    <div className="mt-4 mb-[20px] text-center text-[14px] font-medium text-grey-60 tracking-tight">
-      © {new Date().getFullYear()} Modulab. Built with <span className="text-[#f44336]" role="img" aria-label="love">♥</span> by Modulab.
-    </div>
+    </Card>
   </footer>
 );
 

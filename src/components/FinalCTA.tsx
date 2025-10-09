@@ -7,21 +7,21 @@ const FinalCTA: React.FC = () => (
     <Card className="w-full max-w-7xl mx-auto bg-white p-6 md:p-8 lg:p-12">
       <div className="text-center">
         <h2 className="text-[32px] md:text-[40px] lg:text-[48px] font-semibold text-grey-80 mb-4 leading-tight">
-          Have an idea? We'll bring it to life.
+          Follow Our Product Journey
         </h2>
         <p className="text-grey-60 text-[16px] md:text-[18px] max-w-2xl mx-auto mb-8 leading-relaxed">
-          Whether it's vibe coding, no-code, or a mix of both—let's build something amazing together.
+          Stay updated on the products we're building and the problems we're solving. Join our community of builders and innovators.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button href="https://cal.com/richie-muhammed-vwayuh" variant="primary" size="md" style={{ minWidth: '200px' }}>
-            Book a Call
+          <Button href="https://twitter.com/modulab" variant="primary" size="xs" style={{ minWidth: '200px' }}>
+            Follow on Twitter
           </Button>
-                      <Button href="https://cal.com/richie-muhammed-vwayuh" variant="outline" size="md" style={{ minWidth: '200px' }}>
-            Send a Message
+          <Button href="mailto:hello@modulab.com" variant="outline" size="xs" style={{ minWidth: '200px' }}>
+            Get in Touch
           </Button>
         </div>
         <p className="text-grey-50 text-[14px] mt-6">
-          No pressure, no sales pitch. Just a conversation about your project.
+          We're always excited to connect with fellow builders and product enthusiasts.
         </p>
       </div>
     </Card>

@@ -14,7 +14,7 @@ const sizeClasses = {
 
 const Chip: React.FC<ChipProps> = ({ children, className = '', size = 'xs', color, ...props }) => (
   <span
-    className={`inline-flex items-center bg-[#f5f5f5] text-[#292929] rounded-full font-medium border border-[rgba(20,20,20,0.1)] shadow-[0_4px_8px_0_rgba(34,42,53,0.05)] leading-[1em] ${sizeClasses[size]} ${className}`}
+    className={`inline-flex items-center bg-modulab-yellow text-modulab-purple rounded-full font-medium border border-[rgba(67,59,144,0.1)] shadow-[0_4px_8px_0_rgba(67,59,144,0.1)] leading-[1em] ${sizeClasses[size]} ${className}`}
     style={color ? { backgroundColor: color } : {}}
     {...props}
   >

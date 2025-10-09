@@ -4,7 +4,7 @@ interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   children: React.ReactNode;
   href: string;
   variant?: 'primary' | 'outline';
-  size?: 'md' | 'sm';
+  size?: 'md' | 'sm' | 'xs';
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
 }
@@ -12,6 +12,7 @@ interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 const sizeClasses = {
   md: 'px-6 py-3 text-[16px]',
   sm: 'px-4 py-2 text-[14px]',
+  xs: 'px-3 py-1.5 text-[12px]',
 };
 
 const Button: React.FC<ButtonProps> = ({

@@ -31,7 +31,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  font-family: 'Geist Variable', sans-serif;
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
 h1 {
@@ -85,4 +85,16 @@ button:focus-visible {
   button {
     background-color: transparent;
   }
+}
+
+/* Custom dashed border with more spacing */
+.border-dashed-spaced {
+  border-style: dashed;
+  border-image: repeating-linear-gradient(
+    to right,
+    #d1d5db 0,
+    #d1d5db 8px,
+    transparent 8px,
+    transparent 16px
+  ) 1;
 }

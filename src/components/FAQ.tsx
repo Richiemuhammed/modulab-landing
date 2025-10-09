@@ -5,12 +5,16 @@ import { IconChevronDown, IconHelp } from '@tabler/icons-react';
 
 const faqs = [
   {
-    question: "What's the risk of working with you?",
-    answer: "We're transparent about being a small team. The risk is we might not be the right fit for massive enterprise projects. But for startups and growing companies, we offer speed, flexibility, and personal attention that big agencies can't match."
+    question: "What is Modulab?",
+    answer: "Modulab is a product lab where we build digital products that solve real problems. We're builders who create products we believe in and ship them to the world."
   },
   {
-    question: "How fast can you ship?",
-    answer: "With no-code tools, we can have your MVP live in days, not months. External pages with custom code take 1-2 weeks. The beauty of our approach is you see progress immediately and can iterate based on real user feedback."
+    question: "What kind of products do you build?",
+    answer: "We build digital products that solve real problems. We use a lean, iterative approach—starting with no-code MVPs and evolving to custom code when we need more control and scale."
+  },
+  {
+    question: "How do you approach product development?",
+    answer: "Every product starts with a real problem we've experienced or observed. We research, validate, build MVPs quickly, and iterate based on user feedback."
   }
 ];
 
@@ -30,10 +34,10 @@ const FAQ: React.FC = () => {
             <span>FAQS</span>
           </Chip>
           <h2 className="text-[32px] md:text-[40px] lg:text-[48px] font-semibold text-grey-80 mb-4 leading-tight">
-            Questions we get asked
+            Questions about Modulab
           </h2>
           <p className="text-grey-60 text-[16px] md:text-[18px] max-w-2xl mx-auto leading-relaxed">
-            The stuff founders actually want to know about working with us.
+            Everything you need to know about our product lab approach.
           </p>
         </div>
 
