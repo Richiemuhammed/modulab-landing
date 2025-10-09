@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, type Variants } from 'framer-motion';
+import modulabLogo from '../assets/modulab.png';
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 8 },
@@ -56,7 +57,7 @@ function LandingPage() {
         {/* Hero */}
         <motion.section variants={fadeUp} initial="hidden" animate="visible" className="space-y-4">
           <div className="mb-4">
-            <img src="/src/assets/modulab.png" alt="Modulab - Product Studio" className="h-8 w-auto" />
+            <img src={modulabLogo} alt="Modulab - Product Studio" className="h-8 w-auto" />
           </div>
           <h1 className="text-3xl md:text-4xl font-semibold leading-tight">
             Crafted tools for the modern web.
