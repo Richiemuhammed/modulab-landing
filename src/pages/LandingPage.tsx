@@ -1,14 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, type Variants } from 'framer-motion';
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 8 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } }
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: [0.22, 0.1, 0.36, 1] }
+  }
 };
 
 function LandingPage() {
   const [activePrinciple, setActivePrinciple] = useState(0);
-  const principlesRef = useRef(null);
+  const principlesRef = useRef<HTMLDivElement | null>(null);
   
   const principles = [
     "Start with a real problem.",
