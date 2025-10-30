@@ -1,59 +1,37 @@
-import React, { useEffect, useState } from 'react';
-import Logo from './Logo';
-import MobileNav from './MobileNav';
-import Button from './ui/Button';
+import React from 'react';
+import profileImg from '../assets/profile.png';
+import { IconBrandTwitter } from '@tabler/icons-react';
 
-const navLinks = [
-  { label: 'FAQS', href: '#faq' },
-  { label: 'Process', href: '#process' },
-];
+interface HeaderProps {
+  name?: string;
+}
 
-const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <a
-    href={href}
-    className="text-grey-70 font-semibold text-[16px] px-4 py-2 rounded-full transition-colors hover:bg-grey-20 hover:text-[#242424]"
-  >
-    {children}
-  </a>
-);
-
-const Header: React.FC = () => {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 8);
-    };
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
+const Header: React.FC<HeaderProps> = ({ name = 'Richie' }) => {
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 border-b border-grey-30 ${scrolled ? 'bg-white/30 backdrop-blur-sm' : ''}`}>
-      <div className="max-w-[1320px] mx-auto flex items-center justify-between py-4 border-l border-r border-grey-30 pl-[20px] pr-[20px] h-[64px]">
-        {/* Logo left */}
-        <div className="flex items-center flex-shrink-0 h-full">
-          <div className="flex items-center h-full">
-            <Logo className="h-6 w-auto" />
-          </div>
+    <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-[#0b0b10]/70 bg-[#0b0b10]/90 border-b border-[#1b1c22]">
+      <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <img src={profileImg} alt="Richie profile" className="h-7 w-7 rounded-full ring-1 ring-[#1b1c22] object-cover" />
         </div>
-        {/* Nav center (desktop) */}
-        <nav className="hidden md:flex flex-1 justify-center space-x-5">
-          {navLinks.map((link) => (
-            <NavLink key={link.label} href={link.href}>{link.label}</NavLink>
-          ))}
+        <nav className="flex items-center gap-6 text-sm">
+          <a href="#projects" className="text-gray-400 hover:text-gray-200 transition-colors underline-reveal">Projects</a>
+          <a href="#notes" className="text-gray-400 hover:text-gray-200 transition-colors underline-reveal">Notes</a>
+          <a href="#now" className="text-gray-400 hover:text-gray-200 transition-colors underline-reveal">Now</a>
         </nav>
-        {/* CTA right (desktop) */}
-        <div className="hidden md:flex items-center">
-          <Button href="https://cal.com/richie-muhammed-vwayuh" variant="primary" size="sm" className="ml-4 text-[14px]">Contact</Button>
-        </div>
-        {/* Mobile nav */}
-        <div className="md:hidden flex items-center">
-          <MobileNav navLinks={navLinks} contactUrl="https://cal.com/richie-muhammed-vwayuh" />
-        </div>
+        <a
+          href="https://x.com/richie_muhammed"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-gray-200 transition-colors"
+        >
+          <IconBrandTwitter size={16} />
+          <span className="hidden sm:inline">say hello</span>
+        </a>
       </div>
     </header>
   );
 };
 
-export default Header; 
+export default Header;
+
+ 
