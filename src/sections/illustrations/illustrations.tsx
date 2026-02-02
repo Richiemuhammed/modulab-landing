@@ -1,8 +1,8 @@
 import { motion } from 'motion/react'
-import piggy from '../../assets/piggy.png'
-import piggy2 from '../../assets/piggy2.png'
-import kinMan from '../../assets/kin-man.png'
-import kinMan2 from '../../assets/kin-man2.png'
+import piggy from '../../assets/optimized/piggy.webp'
+import piggy2 from '../../assets/optimized/piggy2.webp'
+import kinMan from '../../assets/optimized/kin-man.webp'
+import kinMan2 from '../../assets/optimized/kin-man2.webp'
 
 /**
  * Individual Mascot Section Component
@@ -27,6 +27,10 @@ function MascotSection({ src, alt }: { src: string; alt: string }) {
         <img 
           src={src} 
           alt={alt} 
+          width={360}
+          height={360}
+          loading="lazy"
+          decoding="async"
           className="max-w-[360px] w-full h-auto object-contain"
         />
       </motion.div>
@@ -84,6 +88,10 @@ export default function Illustrations() {
             <img 
               src={item.src} 
               alt={item.alt} 
+              width={280}
+              height={280}
+              loading="lazy"
+              decoding="async"
               className="max-w-[280px] w-full h-auto object-contain"
             />
           </motion.div>

@@ -1,12 +1,14 @@
 import React, { type ReactNode, useRef, useEffect } from 'react'
 import { CalendarMark } from '@solar-icons/react'
 import { animate } from 'animejs'
+import { usePostHog } from 'posthog-js/react'
 import { colors } from '../tokens/colors'
 
 interface PrimaryButtonProps {
   href?: string
   children: ReactNode
   className?: string
+  trackLabel?: string
   [key: string]: any
 }
 
@@ -17,12 +19,19 @@ export default function PrimaryButton({
   href, 
   children, 
   className = '', 
+  trackLabel,
   ...props 
 }: PrimaryButtonProps) {
+  const posthog = usePostHog()
   const buttonRef = useRef<HTMLButtonElement | HTMLAnchorElement>(null)
   const iconContainerRef = useRef<HTMLSpanElement>(null)
   const iconTopRef = useRef<HTMLSpanElement>(null)
   const iconBottomRef = useRef<HTMLSpanElement>(null)
+
+  const handleClick = () => {
+    const label = trackLabel || (typeof children === 'string' ? children : 'Primary CTA')
+    posthog?.capture('CTA Clicked', { cta_label: label, cta_type: 'primary' })
+  }
 
   useEffect(() => {
     const button = buttonRef.current
@@ -94,14 +103,14 @@ export default function PrimaryButton({
 
   if (href) {
     return (
-      <a ref={buttonRef as React.RefObject<HTMLAnchorElement>} className={combinedClass} style={buttonStyle} href={href} {...props}>
+      <a ref={buttonRef as React.RefObject<HTMLAnchorElement>} className={combinedClass} style={buttonStyle} href={href} onClick={handleClick} {...props}>
         {content}
       </a>
     )
   }
 
   return (
-    <button ref={buttonRef as React.RefObject<HTMLButtonElement>} className={combinedClass} style={buttonStyle} type="button" {...props}>
+    <button ref={buttonRef as React.RefObject<HTMLButtonElement>} className={combinedClass} style={buttonStyle} type="button" onClick={handleClick} {...props}>
       {content}
     </button>
   )

@@ -13,6 +13,7 @@ import Pricing from './sections/pricing/pricing'
 import FAQ from './sections/faq/faq'
 import CTA from './sections/cta/cta'
 import Footer from './components/footer'
+import ScrollTracker from './components/scroll-tracker'
 import { colors } from './tokens/colors'
 
 /**
@@ -27,7 +28,8 @@ function HomePage() {
       </header>
 
       {/* Right Side Container - Showcase Content */}
-      <main className="flex-1 flex flex-col gap-[64px] p-2 border-l border-r border-dashed-clean lg:h-screen lg:overflow-y-auto">
+      <main id="main-scroll" className="flex-1 flex flex-col gap-[64px] p-2 border-l border-r border-dashed-clean lg:h-screen lg:overflow-y-auto">
+        <ScrollTracker threshold={0.75} containerSelector="#main-scroll" />
         <ShowcaseItem id="work">
           <Showcase1 />
         </ShowcaseItem>
@@ -68,7 +70,8 @@ function PricingPage() {
       </header>
 
       {/* Right Side Container - Pricing Content */}
-      <main className="flex-1 flex flex-col gap-[64px] p-2 border-l border-r border-dashed-clean lg:h-screen lg:overflow-y-auto">
+      <main id="pricing-scroll" className="flex-1 flex flex-col gap-[64px] p-2 border-l border-r border-dashed-clean lg:h-screen lg:overflow-y-auto">
+        <ScrollTracker threshold={0.75} containerSelector="#pricing-scroll" />
         <Pricing />
         <FAQ />
         <CTA />

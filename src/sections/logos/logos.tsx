@@ -1,5 +1,5 @@
 import { motion } from 'motion/react'
-import kinIcon from '../../assets/kin-icon.png'
+import kinIcon from '../../assets/optimized/kin-icon.webp'
 
 const logos = [
   { src: kinIcon, alt: 'Kin' },
@@ -34,6 +34,10 @@ export default function Logos() {
             <img 
               src={logo.src} 
               alt={logo.alt} 
+              width={48}
+              height={48}
+              loading="lazy"
+              decoding="async"
               className="h-12 w-12 object-cover rounded-xl shadow-sm border border-gray-100"
             />
           </motion.div>

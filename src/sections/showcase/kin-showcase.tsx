@@ -1,11 +1,11 @@
 import { motion } from 'motion/react'
-import signInImage from '../../assets/sign-in.png'
-import signIn2Image from '../../assets/sign-in2.png'
-import paywallImage from '../../assets/paywall.png'
-import getStartedImage from '../../assets/get-started.png'
-import homeImage from '../../assets/home.png'
-import dixonImage from '../../assets/dixon.png'
-import settingsImage from '../../assets/settings.png'
+import signInImage from '../../assets/optimized/sign-in.webp'
+import signIn2Image from '../../assets/optimized/sign-in2.webp'
+import paywallImage from '../../assets/optimized/paywall.webp'
+import getStartedImage from '../../assets/optimized/get-started.webp'
+import homeImage from '../../assets/optimized/home.webp'
+import dixonImage from '../../assets/optimized/dixon.webp'
+import settingsImage from '../../assets/optimized/settings.webp'
 
 /**
  * Phone Mockup Component - displays screenshot with hover animation
@@ -32,6 +32,10 @@ function PhoneMockup({ delay = 0, image = signInImage }: { delay?: number; image
         <img 
           src={image}
           alt="App screenshot"
+          width={240}
+          height={520}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full rounded-[32px] relative z-10 object-cover"
         />
         {/* Faint shadow floor to ground the mockup */}

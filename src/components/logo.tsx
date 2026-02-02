@@ -1,4 +1,4 @@
-import logoImage from '../assets/modulab.2.png'
+import logoImage from '../assets/optimized/modulab.2.webp'
 import { colors } from '../tokens/colors'
 
 export default function Logo() {
