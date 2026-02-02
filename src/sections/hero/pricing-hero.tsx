@@ -46,20 +46,12 @@ export default function PricingHero() {
       </div>
 
 
-      {/* Bottom - How Modulab Works */}
-      <div className="flex flex-col mt-auto bg-transparent">
-        <div 
-          className="flex flex-col gap-lg border-t border-dashed-clean"
-          style={{
-            paddingTop: '24px',
-            paddingBottom: '24px',
-            paddingLeft: colors.dashboard.padding.horizontal,
-            paddingRight: colors.dashboard.padding.horizontal,
-          }}
-        >
+      {/* How Modulab Works */}
+      <div className="flex flex-col bg-transparent px-lg">
+        <div className="flex flex-col gap-lg">
           <p 
-            className="text-xs font-medium tracking-wider uppercase"
-            style={{ color: colors.text.tertiary, letterSpacing: '0.1em' }}
+            className="text-xs font-semibold tracking-wider uppercase"
+            style={{ color: colors.accent, letterSpacing: '0.1em' }}
           >
             How it works
           </p>
