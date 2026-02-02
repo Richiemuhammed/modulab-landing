@@ -44,8 +44,8 @@ function PricingPlanCard({ title, description, price, duration, features, ctaTex
             {/* Features list */}
             <div className="flex flex-col gap-md pl-0">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-center gap-sm group">
-                  <CheckCircle size={18} weight="Bold" style={{ color: colors.accent }} className="shrink-0" />
+                <div key={index} className="flex items-start gap-sm group">
+                  <CheckCircle size={18} weight="Bold" style={{ color: colors.accent, marginTop: '2px' }} className="shrink-0" />
                   <span className="text-sm font-normal leading-relaxed flex-1" style={{ letterSpacing: '0em', color: colors.text.secondary }}>
                     {feature}
                   </span>
@@ -80,10 +80,10 @@ export default function ModulabPricingCard() {
     'Product scope definition + build roadmap',
     'Mobile UI/UX system design',
     'React Native app (iOS + Android)',
-    'Backend architecture, authentication & onboarding flows',
-    'Analytics instrumentation + stability monitoring',
+    'Backend architecture, auth & onboarding',
+    'Analytics + stability monitoring',
     'TestFlight / Play Store release support',
-    'Option to continue with monthly product partnership',
+    'Option for monthly product partnership',
   ]
 
   const buildLaunchKitFeatures = [
@@ -93,7 +93,7 @@ export default function ModulabPricingCard() {
     'Loops email setup (waitlist/newsletter)',
     'SEO foundations + OG previews',
     'App Store screenshots + launch assets',
-    'Option to continue with monthly product partnership',
+    'Option for monthly product partnership',
   ]
 
   return (
@@ -101,7 +101,7 @@ export default function ModulabPricingCard() {
       {/* First row: Two cards side by side */}
       <div className="flex flex-col md:flex-row gap-4xl w-full justify-center md:items-stretch">
         {/* Build Engagement */}
-        <div className="w-full md:w-[340px] md:shrink-0 flex">
+        <div className="w-full md:w-[380px] md:shrink-0 flex">
           <PricingPlanCard
             title="Build Engagement"
             description="For founders shipping a serious first version."
@@ -114,7 +114,7 @@ export default function ModulabPricingCard() {
         </div>
 
         {/* Build + Launch Kit */}
-        <div className="w-full md:w-[340px] md:shrink-0 flex">
+        <div className="w-full md:w-[380px] md:shrink-0 flex">
           <PricingPlanCard
             title="Build + Launch Kit"
             description="For founders who want the app + a clean launch surface."
