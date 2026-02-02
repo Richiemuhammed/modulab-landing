@@ -1,6 +1,4 @@
 import ModulabPricingCard from './modulab-pricing-card'
-import { colors } from '../../tokens'
-import SectionHeader from '../../components/section-header'
 
 /**
  * Pricing Section Component
@@ -14,12 +12,6 @@ export default function Pricing() {
       style={{ borderRadius: '0px', paddingTop: '128px', paddingBottom: '128px' }}
       aria-label="Section: Pricing"
     >
-      <SectionHeader 
-        label="Pricing"
-        title="Clear packages. Senior execution. Limited slots."
-        className="mb-5xl"
-      />
-      
       {/* Pricing cards */}
       <ModulabPricingCard />
     </div>
