@@ -2,7 +2,7 @@ import { motion } from 'motion/react'
 import { Link } from 'react-router-dom'
 import Logo from '../../components/logo'
 import PrimaryButton from '../../components/primary-button'
-import { colors, getTextGradient } from '../../tokens'
+import { colors } from '../../tokens'
 
 const processSteps = [
   { number: '01', text: 'Define product scope' },
@@ -45,56 +45,6 @@ export default function PricingHero() {
         </nav>
       </div>
 
-      {/* Pricing Hero Content */}
-      <div className="flex flex-col gap-5xl lg:gap-4xl mt-2xl lg:mt-0 px-lg">
-        <div className="flex flex-col gap-xl">
-          <motion.p
-            className="text-xs font-medium tracking-wider uppercase"
-            style={{ color: colors.text.tertiary, letterSpacing: '0.1em' }}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
-          >
-            Pricing
-          </motion.p>
-          
-          <motion.h1 
-            className="font-heading md:text-[32px]"
-            style={{
-              fontSize: '44px',
-              fontWeight: 600,
-              letterSpacing: '-0.03em',
-              lineHeight: '1.1',
-              ...getTextGradient('bold'),
-            }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
-          >
-            Product engineering for early-stage founders.
-          </motion.h1>
-
-          <motion.p 
-            className="text-lg font-normal leading-[1.6] text-gray-600 max-w-[40ch]" 
-            style={{ letterSpacing: '0em' }}
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
-          >
-            Launch-ready mobile systems, built with clarity and long-term thinking.
-          </motion.p>
-
-          <motion.p 
-            className="text-sm font-normal leading-[1.6] max-w-[38ch]" 
-            style={{ letterSpacing: '0em', color: colors.text.tertiary }}
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
-          >
-            One team. Full ownership. From idea to App Store.
-          </motion.p>
-        </div>
-      </div>
 
       {/* Bottom - How Modulab Works */}
       <div className="flex flex-col mt-auto bg-transparent">
