@@ -2,18 +2,19 @@ import { motion } from 'motion/react'
 import { Link } from 'react-router-dom'
 import Logo from '../../components/logo'
 import PrimaryButton from '../../components/primary-button'
-import { colors, getTextGradient, fontFamilies } from '../../tokens'
-import { CheckCircle } from '@solar-icons/react'
+import { colors, getTextGradient } from '../../tokens'
 
-const trialPoints = [
-  'Real deliverables in 2 weeks',
-  'Love it? Continue into full build',
-  'Not a fit? Walk away with everything',
+const processSteps = [
+  { number: '01', text: 'Define product scope' },
+  { number: '02', text: 'Design system & UX' },
+  { number: '03', text: 'Build launch-ready architecture' },
+  { number: '04', text: 'Ship to App Store' },
+  { number: '05', text: 'Continue as product partner' },
 ]
 
 /**
  * Pricing Hero Component
- * Dedicated hero for the pricing page
+ * Calm, structured positioning — product engineering leadership
  */
 export default function PricingHero() {
   const getNavLinkClasses = (isActive: boolean) => {
@@ -70,7 +71,7 @@ export default function PricingHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
           >
-            Clear packages for serious founders.
+            Product engineering for early-stage founders.
           </motion.h1>
 
           <motion.p 
@@ -80,50 +81,25 @@ export default function PricingHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
           >
-            No hourly rates. No scope creep. Senior execution with fixed outcomes.
+            Launch-ready mobile systems, built with clarity and long-term thinking.
+          </motion.p>
+
+          <motion.p 
+            className="text-sm font-normal leading-[1.6] max-w-[38ch]" 
+            style={{ letterSpacing: '0em', color: colors.text.tertiary }}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
+          >
+            Not an agency. Not a dev shop. A product partner from first build to first traction.
           </motion.p>
         </div>
-
-        {/* Trial Offer */}
-        <motion.div 
-          className="flex flex-col gap-lg p-lg rounded-lg border border-dashed-clean"
-          style={{ backgroundColor: 'rgba(217, 66, 5, 0.04)' }}
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.3 }}
-        >
-          <p className="text-sm font-semibold" style={{ color: colors.accent }}>
-            → Try the 2-week pilot for $4,500
-          </p>
-          <div className="flex flex-col gap-2">
-            {trialPoints.map((point, index) => (
-              <div key={index} className="flex items-center gap-2">
-                <CheckCircle size={14} weight="Bold" style={{ color: colors.accent }} />
-                <span className="text-xs font-normal" style={{ color: colors.text.secondary }}>
-                  {point}
-                </span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* CTA */}
-        <motion.div 
-          className="flex gap-md flex-wrap items-center"
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.4 }}
-        >
-          <PrimaryButton href="https://cal.com/modul-lab-9hvki1/sales-meeting" target="_blank" rel="noopener noreferrer">
-            Book intro call
-          </PrimaryButton>
-        </motion.div>
       </div>
 
-      {/* Bottom - Testimonial snippet */}
+      {/* Bottom - How Modulab Works */}
       <div className="flex flex-col mt-auto bg-transparent">
         <div 
-          className="flex flex-col gap-3 border-t border-dashed-clean"
+          className="flex flex-col gap-lg border-t border-dashed-clean"
           style={{
             paddingTop: '24px',
             paddingBottom: '24px',
@@ -132,17 +108,47 @@ export default function PricingHero() {
           }}
         >
           <p 
-            className="text-sm font-normal leading-relaxed italic"
-            style={{ color: colors.text.secondary }}
+            className="text-xs font-medium tracking-wider uppercase"
+            style={{ color: colors.text.tertiary, letterSpacing: '0.1em' }}
           >
-            "They turned my scattered idea into a real app — shipped to both stores in 8 weeks."
+            How it works
           </p>
-          <p 
-            className="text-xs font-medium"
-            style={{ color: colors.text.tertiary }}
+          
+          <div className="flex flex-col gap-3">
+            {processSteps.map((step, index) => (
+              <motion.div 
+                key={index}
+                className="flex items-center gap-3"
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, ease: 'easeOut', delay: 0.4 + (index * 0.08) }}
+              >
+                <span 
+                  className="text-[10px] font-medium"
+                  style={{ color: colors.text.tertiary }}
+                >
+                  {step.number}
+                </span>
+                <span 
+                  className="text-sm font-normal"
+                  style={{ color: colors.text.secondary }}
+                >
+                  {step.text}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div 
+            className="pt-lg"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.8 }}
           >
-            — Early-stage founder, Wellness App
-          </p>
+            <PrimaryButton href="https://cal.com/modul-lab-9hvki1/sales-meeting" target="_blank" rel="noopener noreferrer">
+              Book intro call
+            </PrimaryButton>
+          </motion.div>
         </div>
       </div>
     </div>
