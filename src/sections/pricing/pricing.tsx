@@ -16,7 +16,8 @@ export default function Pricing() {
     >
       <SectionHeader 
         label="Pricing"
-        title="Clear packages. Senior execution. Limited slots."
+        title="Simple pricing for serious founders."
+        subtitle="Whether you need a complete build or ongoing partnership, we've got you covered. No hourly billing, no scope creep — just focused execution."
         className="mb-5xl"
       />
       
