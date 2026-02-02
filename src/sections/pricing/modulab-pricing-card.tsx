@@ -77,45 +77,39 @@ function PricingPlanCard({ title, description, price, duration, features, ctaTex
  */
 export default function ModulabPricingCard() {
   const buildFeatures = [
-    'Product scope + build plan',
-    'Mobile UI/UX design',
+    'Product scope definition + build roadmap',
+    'Mobile UI/UX system design',
     'React Native app (iOS + Android)',
-    'Backend + auth + onboarding',
-    'Analytics events + crash monitoring',
+    'Backend architecture, authentication & onboarding flows',
+    'Analytics instrumentation + stability monitoring',
     'TestFlight / Play Store release support',
+    'Option to continue with monthly product partnership',
   ]
 
   const buildLaunchKitFeatures = [
     'Everything in Build, plus',
-    'Framer landing page (premium quality)',
+    'Premium Framer landing page',
     'Hero + pricing copy polish',
     'Loops email setup (waitlist/newsletter)',
-    'SEO basics + OG previews',
+    'SEO foundations + OG previews',
     'App Store screenshots + launch assets',
-  ]
-
-  const modulabXFeatures = [
-    'Weekly shipping cadence',
-    'Design + engineering support',
-    'Iteration, performance + bug fixes',
-    'Product advisory + technical direction',
-    'Calm execution — no bloat',
+    'Option to continue with monthly product partnership',
   ]
 
   return (
     <div className="flex flex-col gap-5xl w-full">
       {/* First row: Two cards side by side */}
       <div className="flex flex-col md:flex-row gap-4xl w-full justify-center md:items-stretch">
-        {/* Build */}
+        {/* Build Engagement */}
         <div className="w-full md:w-[340px] md:shrink-0 flex">
           <PricingPlanCard
-            title="Build (App only)"
+            title="Build Engagement"
             description="For founders shipping a serious first version."
             price="$9,000"
             duration="4–6 weeks"
             features={buildFeatures}
             ctaText="Book a 15-min call"
-            ctaHref="#work"
+            ctaHref="https://cal.com/modul-lab-9hvki1/sales-meeting"
           />
         </div>
 
@@ -128,25 +122,24 @@ export default function ModulabPricingCard() {
             duration="5–7 weeks"
             features={buildLaunchKitFeatures}
             ctaText="Book a 15-min call"
-            ctaHref="#work"
+            ctaHref="https://cal.com/modul-lab-9hvki1/sales-meeting"
             isPrimary={true}
           />
         </div>
       </div>
 
-      {/* Second row: One card centered - no nested card, just content */}
-      <div className="flex flex-col items-center w-full pt-3xl">
-        <div className="w-full lg:w-auto lg:max-w-[480px] flex flex-col gap-3xl items-center text-center">
-          <div className="flex flex-col gap-xs">
-            <p className="text-xs font-light leading-relaxed" style={{ letterSpacing: '0.01em', color: colors.text.secondary }}>
-              Weekly shipping cadence. Design + engineering support. Keep iterating without the overhead. Starting at $9,000/month. Limited to 1–2 active partnerships.
-            </p>
-          </div>
-          <div>
-            <PrimaryButton href="https://cal.com/modul-lab-9hvki1/sales-meeting" target="_blank" rel="noopener noreferrer" className="!w-full justify-center">
-              Book a call
-            </PrimaryButton>
-          </div>
+      {/* Ongoing Product Partnership */}
+      <div className="flex flex-col items-center w-full pt-3xl border-t border-dashed-clean">
+        <div className="w-full lg:w-auto lg:max-w-[560px] flex flex-col gap-xl items-center text-center pt-3xl">
+          <h3 className="font-heading text-xl font-semibold tracking-tight" style={{ letterSpacing: '-0.02em', color: colors.text.primary }}>
+            Ongoing Product Partnership
+          </h3>
+          <p className="text-sm font-normal leading-relaxed" style={{ letterSpacing: '0em', color: colors.text.secondary }}>
+            Weekly shipping cadence. Design + engineering leadership to iterate, improve performance, and expand product surface without hiring a team.
+          </p>
+          <p className="text-sm font-medium" style={{ color: colors.text.primary }}>
+            From $9,000/month · Limited to 1–2 active partnerships
+          </p>
         </div>
       </div>
     </div>
