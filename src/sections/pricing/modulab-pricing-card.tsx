@@ -138,7 +138,10 @@ export default function ModulabPricingCard() {
             Weekly shipping cadence. Design + engineering leadership to iterate, improve performance, and expand product surface without hiring a team.
           </p>
           <p className="text-sm font-medium" style={{ color: colors.text.primary }}>
-            From $9,000/month · Limited to 1–2 active partnerships
+            Product engagements from $9,000/month
+          </p>
+          <p className="text-xs font-normal" style={{ color: colors.text.tertiary }}>
+            Early-stage pilot engagements available · Limited to 1–2 active partnerships
           </p>
         </div>
       </div>
