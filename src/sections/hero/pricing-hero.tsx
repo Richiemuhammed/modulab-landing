@@ -74,8 +74,8 @@ export default function PricingHero() {
                 transition={{ duration: 0.4, ease: 'easeOut', delay: 0.4 + (index * 0.08) }}
               >
                 <span 
-                  className="text-[10px] font-medium"
-                  style={{ color: colors.text.tertiary }}
+                  className="text-[10px] font-semibold"
+                  style={{ color: colors.accent }}
                 >
                   {step.number}
                 </span>
