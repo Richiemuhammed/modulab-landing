@@ -1,14 +1,10 @@
 import { motion } from 'motion/react'
+import { Link } from 'react-router-dom'
 import Logo from '../../components/logo'
 import PrimaryButton from '../../components/primary-button'
 import SecondaryButton from '../../components/secondary-button'
 import { colors, getTextGradient, fontFamilies } from '../../tokens'
 import { UserCircle, Calendar, CheckCircle, Bolt, ShieldCheck, UsersGroupRounded } from '@solar-icons/react'
-
-interface HeroProps {
-  activeView: 'work' | 'pricing'
-  onViewChange: (view: 'work' | 'pricing') => void
-}
 
 const deliverItems = [
   { icon: UserCircle, text: 'Founder-led studio' },
@@ -23,11 +19,9 @@ const deliverItems = [
  * Hero Component - Single file with Tailwind
  * Converted from hero.jsx + hero.css
  */
-export default function Hero({ activeView, onViewChange }: HeroProps) {
-
-  const getNavLinkClasses = (view: 'work' | 'pricing') => {
+export default function Hero() {
+  const getNavLinkClasses = (isActive: boolean) => {
     const baseClasses = "font-label text-xs font-light tracking-wider leading-[1.5] no-underline uppercase cursor-pointer transition-colors duration-200"
-    const isActive = activeView === view
     
     if (isActive) {
       return `${baseClasses} text-gray-900`
@@ -44,18 +38,12 @@ export default function Hero({ activeView, onViewChange }: HeroProps) {
       <div className="flex items-center lg:justify-start pt-lg pb-lg px-lg border-b border-dashed-clean">
         <Logo />
         <nav className="ml-auto flex flex-row gap-6 items-center" aria-label="Navigation">
-            <button
-              onClick={() => onViewChange('work')}
-              className={getNavLinkClasses('work')}
-            >
-              Work
-            </button>
-            <button
-              onClick={() => onViewChange('pricing')}
-              className={getNavLinkClasses('pricing')}
-            >
-              Pricing
-            </button>
+          <Link to="/" className={getNavLinkClasses(true)}>
+            Work
+          </Link>
+          <Link to="/pricing" className={getNavLinkClasses(false)}>
+            Pricing
+          </Link>
         </nav>
       </div>
 

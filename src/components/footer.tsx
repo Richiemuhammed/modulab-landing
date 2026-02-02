@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { colors } from '../tokens/colors'
 
 /**
@@ -21,12 +22,12 @@ export default function Footer() {
 
       {/* Right - Links */}
       <nav className="flex flex-row gap-6 items-center" aria-label="Footer navigation">
-        <a href="#work" className={linkClasses} style={{ letterSpacing: '0.08em' }}>
+        <Link to="/" className={linkClasses} style={{ letterSpacing: '0.08em' }}>
           Work
-        </a>
-        <a href="#pricing" className={linkClasses} style={{ letterSpacing: '0.08em' }}>
+        </Link>
+        <Link to="/pricing" className={linkClasses} style={{ letterSpacing: '0.08em' }}>
           Pricing
-        </a>
+        </Link>
         <a 
           href="https://t.me/richiemuhammed" 
           target="_blank" 
