@@ -45,9 +45,47 @@ export default function PricingHero() {
         </nav>
       </div>
 
+      {/* Hero Content */}
+      <div className="flex flex-col gap-xl px-lg">
+        <motion.h1 
+          className="font-heading md:text-[32px]"
+          style={{
+            fontSize: '44px',
+            fontWeight: 600,
+            letterSpacing: '-0.03em',
+            lineHeight: '1.1',
+            color: colors.text.primary,
+          }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+        >
+          Product engineering for <span style={{ color: colors.accent }}>early-stage founders</span>.
+        </motion.h1>
 
-      {/* How Modulab Works */}
-      <div className="flex flex-col bg-transparent px-lg">
+        <motion.p 
+          className="text-lg font-normal leading-[1.6] text-gray-600 max-w-[40ch]" 
+          style={{ letterSpacing: '0em' }}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
+        >
+          Launch-ready mobile systems, built with clarity and long-term thinking.
+        </motion.p>
+
+        <motion.p 
+          className="text-sm font-normal leading-[1.6] max-w-[38ch]" 
+          style={{ letterSpacing: '0em', color: colors.text.tertiary }}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
+        >
+          One team. Full ownership. From idea to App Store.
+        </motion.p>
+      </div>
+
+      {/* How Modulab Works - Bottom */}
+      <div className="flex flex-col mt-auto bg-transparent px-lg pb-lg">
         <div className="flex flex-col gap-lg">
           <p 
             className="text-xs font-semibold tracking-wider uppercase"
