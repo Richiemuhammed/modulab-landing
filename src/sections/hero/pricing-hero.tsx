@@ -91,7 +91,7 @@ export default function PricingHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
           >
-            Not an agency. Not a dev shop. A product partner from first build to first traction.
+            One team. Full ownership. From idea to App Store.
           </motion.p>
         </div>
       </div>
