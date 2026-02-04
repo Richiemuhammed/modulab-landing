@@ -57,11 +57,11 @@ function PricingPlanCard({ title, description, price, duration, features, ctaTex
           {/* CTA Section */}
           <div className="pt-lg mt-auto outline-none border-0">
             {isPrimary ? (
-              <PrimaryButton href={ctaHref} className="!w-full justify-center hover:scale-100 hover:shadow-[0_2px_4px_rgba(0,0,0,0.12)] !outline-none !border-0 focus:!outline-none focus-visible:!outline-none" disableHover>
+              <PrimaryButton href={ctaHref} className="!w-full justify-center !outline-none !border-0 focus:!outline-none focus-visible:!outline-none">
                 {ctaText}
               </PrimaryButton>
             ) : (
-              <SecondaryButton href={ctaHref} className="!w-full justify-center hover:scale-100 !outline-none !border-0 focus:!outline-none focus-visible:!outline-none" disableHover>
+              <SecondaryButton href={ctaHref} className="!w-full justify-center !outline-none !border-0 focus:!outline-none focus-visible:!outline-none">
                 {ctaText}
               </SecondaryButton>
             )}
