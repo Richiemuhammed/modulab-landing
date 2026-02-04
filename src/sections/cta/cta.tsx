@@ -46,11 +46,7 @@ export default function CTA() {
             Intro chat
           </PrimaryButton>
 
-          <SecondaryButton 
-            href="https://dribbble.com/modulab"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <SecondaryButton to="/" trackLabel="See our work">
             See our work
           </SecondaryButton>
         </motion.div>

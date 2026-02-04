@@ -1,5 +1,6 @@
 import { motion } from 'motion/react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { usePostHog } from 'posthog-js/react'
 import Logo from '../../components/logo'
 import PrimaryButton from '../../components/primary-button'
 import SecondaryButton from '../../components/secondary-button'
@@ -7,12 +8,12 @@ import { colors, getTextGradient, fontFamilies } from '../../tokens'
 import { UserCircle, Calendar, CheckCircle, Bolt, ShieldCheck, UsersGroupRounded } from '@solar-icons/react'
 
 const deliverItems = [
-  { icon: UserCircle, text: 'Founder-led studio' },
-  { icon: CheckCircle, text: 'App Store ready' },
-  { icon: Calendar, text: 'Limited slots (1–2/month)' },
-  { icon: Bolt, text: 'Fast performance' },
-  { icon: ShieldCheck, text: 'Crash-free code' },
-  { icon: UsersGroupRounded, text: 'Built for first users' },
+  { icon: UserCircle, text: 'Ship your first version' },
+  { icon: CheckCircle, text: 'iOS + Android, one build' },
+  { icon: Calendar, text: 'Senior team focused on you' },
+  { icon: Bolt, text: 'Fast & stable from day one' },
+  { icon: ShieldCheck, text: 'Production-ready, not prototype' },
+  { icon: UsersGroupRounded, text: 'Built for your first 100 users' },
 ]
 
 /**
@@ -20,6 +21,9 @@ const deliverItems = [
  * Converted from hero.jsx + hero.css
  */
 export default function Hero() {
+  const posthog = usePostHog()
+  const location = useLocation()
+
   const getNavLinkClasses = (isActive: boolean) => {
     const baseClasses = "font-label text-xs font-light tracking-wider leading-[1.5] no-underline uppercase cursor-pointer transition-colors duration-200"
     
@@ -38,10 +42,18 @@ export default function Hero() {
       <div className="flex items-center lg:justify-start pt-lg pb-lg px-lg border-b border-dashed-clean">
         <Logo />
         <nav className="ml-auto flex flex-row gap-6 items-center" aria-label="Navigation">
-          <Link to="/" className={getNavLinkClasses(true)}>
+          <Link
+            to="/"
+            className={getNavLinkClasses(location.pathname === '/')}
+            onClick={() => posthog?.capture('Nav Clicked', { destination: 'Work', path: '/' })}
+          >
             Work
           </Link>
-          <Link to="/pricing" className={getNavLinkClasses(false)}>
+          <Link
+            to="/pricing"
+            className={getNavLinkClasses(location.pathname === '/pricing')}
+            onClick={() => posthog?.capture('Nav Clicked', { destination: 'Pricing', path: '/pricing' })}
+          >
             Pricing
           </Link>
         </nav>
@@ -110,7 +122,7 @@ export default function Hero() {
                     }}
                   >
                     <Icon size={16} weight="BoldDuotone" style={{ color: colors.text.tertiary }} />
-                    <span className="text-xs font-medium" style={{ color: colors.text.primary }}>{item.text}</span>
+                    <span className="text-xs font-semibold" style={{ color: colors.text.primary }}>{item.text}</span>
                   </motion.div>
                 )
               })}
@@ -146,7 +158,7 @@ export default function Hero() {
               color: colors.text.primary,
             }}
           >
-            $9,000<span className="text-xs font-normal" style={{ color: colors.text.secondary }}>/month</span>
+            $6,000<span className="text-xs font-normal" style={{ color: colors.text.secondary }}>/month</span>
           </span>
         </div>
         {/* Full-width availability banner */}
@@ -159,8 +171,8 @@ export default function Hero() {
             style={{ animation: 'ripple 2s ease-in-out infinite' }}
           />
           <span 
-            className="text-[9px] font-semibold text-white tracking-wider uppercase"
-            style={{ letterSpacing: '0.12em' }}
+            className="text-[9px] font-extrabold text-white tracking-wider uppercase"
+            style={{ letterSpacing: '0.12em', fontWeight: 800 }}
           >
             Booking for Feb '26 — Limited availability
           </span>

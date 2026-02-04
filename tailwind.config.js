@@ -35,7 +35,7 @@ export default {
           950: '#0F0F0F',
         },
         accent: {
-          DEFAULT: '#D94205',
+          DEFAULT: '#D62C34',
           25: '#FFF7F4',
           50: '#FFEFE8',
           100: '#FFDACC',
@@ -44,7 +44,7 @@ export default {
           400: '#FF7438',
           500: '#FC5F1A',
           600: '#F84E06',
-          700: '#D94205',
+          700: '#D62C34',
           800: '#B33704',
           900: '#8C2B03',
         },

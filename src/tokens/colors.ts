@@ -46,7 +46,7 @@ export const colors = {
   success: '#168364',
   warning: '#E5AA00',
   danger: '#F04438',
-  accent: '#F84E06', // Kin dark vermilion
+  accent: '#D62C34', // Grenadine (bolder)
   
   // Enhanced Text Colors (more readable, darker)
   text: {
@@ -69,7 +69,7 @@ export const colors = {
     primary: 'linear-gradient(45deg, #0F0F0F 0%, #333333 100%)', // primary.700 to primary.500
     accent: 'linear-gradient(135deg, #F49062 0%, #D9534F 100%)', // Orange to accent red gradient
     background: '#FAFAFA',
-    surface: 'linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%)', // surface to primary.25
+    surface: 'linear-gradient(180deg, #F0F0F0 0%, #E8E8E8 100%)', // grey surface for secondary button
     
     // Text Gradients (use with background-clip: text and color: transparent)
     text: {

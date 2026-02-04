@@ -628,6 +628,12 @@
     color-scheme: light;
     scroll-behavior: smooth;
   }
+
+  /* Smoother scroll in main content areas (sidebar + main column) */
+  [id="main-scroll"],
+  [id="pricing-scroll"] {
+    scroll-behavior: smooth;
+  }
   
   * {
     -webkit-font-smoothing: antialiased;

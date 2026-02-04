@@ -17,8 +17,8 @@ interface PricingPlanProps {
 
 function PricingPlanCard({ title, description, price, duration, features, ctaText, ctaHref, isPrimary, featuresLabel = 'Includes' }: PricingPlanProps) {
   return (
-    <div className="relative w-full h-full flex flex-col bg-white border-dashed-clean rounded-lg" style={{ overflow: 'visible' }}>
-      <div className="p-3xl flex flex-col gap-3xl flex-1 overflow-hidden rounded-lg">
+    <div className="relative w-full h-full flex flex-col bg-white outline-none border-0" style={{ overflow: 'visible' }}>
+      <div className="flex flex-col gap-3xl flex-1 outline-none border-0">
           {/* Title and Description */}
           <div className="flex flex-col gap-xs">
             <h2 className="font-heading text-2xl font-semibold tracking-tight leading-tight" style={{ ...getTextGradient('primary'), letterSpacing: '-0.02em' }}>
@@ -55,13 +55,13 @@ function PricingPlanCard({ title, description, price, duration, features, ctaTex
           </div>
 
           {/* CTA Section */}
-          <div className="pt-lg mt-auto">
+          <div className="pt-lg mt-auto outline-none border-0">
             {isPrimary ? (
-              <PrimaryButton href={ctaHref} className="!w-full justify-center">
+              <PrimaryButton href={ctaHref} className="!w-full justify-center hover:scale-100 hover:shadow-[0_2px_4px_rgba(0,0,0,0.12)] !outline-none !border-0 focus:!outline-none focus-visible:!outline-none" disableHover>
                 {ctaText}
               </PrimaryButton>
             ) : (
-              <SecondaryButton href={ctaHref} className="!w-full justify-center">
+              <SecondaryButton href={ctaHref} className="!w-full justify-center hover:scale-100 !outline-none !border-0 focus:!outline-none focus-visible:!outline-none" disableHover>
                 {ctaText}
               </SecondaryButton>
             )}
@@ -77,35 +77,31 @@ function PricingPlanCard({ title, description, price, duration, features, ctaTex
  */
 export default function ModulabPricingCard() {
   const buildFeatures = [
-    'Product scope definition + build roadmap',
-    'Mobile UI/UX system design',
-    'React Native app (iOS + Android)',
-    'Backend architecture, auth & onboarding',
-    'Analytics + stability monitoring',
-    'TestFlight / Play Store release support',
-    'Option for monthly product partnership',
+    'Scope + build roadmap',
+    'UI/UX system design',
+    'React Native (iOS + Android)',
+    'Backend, auth & onboarding',
+    'TestFlight & Play Store release',
   ]
 
   const buildLaunchKitFeatures = [
     'Everything in Build, plus',
-    'Premium Framer landing page',
-    'Hero + pricing copy polish',
-    'Loops email setup (waitlist/newsletter)',
-    'SEO foundations + OG previews',
-    'App Store screenshots + launch assets',
-    'Option for monthly product partnership',
+    'Framer landing page',
+    'Loops email (waitlist/newsletter)',
+    'SEO + OG previews',
+    'Screenshots + launch assets',
   ]
 
   return (
     <div className="flex flex-col gap-5xl w-full">
-      {/* First row: Two cards side by side */}
+      {/* Main offers: Two cards side by side */}
       <div className="flex flex-col md:flex-row gap-4xl w-full justify-center md:items-stretch">
         {/* Build Engagement */}
         <div className="w-full md:w-[380px] md:shrink-0 flex">
           <PricingPlanCard
-            title="Build Engagement"
-            description="For founders shipping a serious first version."
-            price="$9,000"
+            title="Build"
+            description="We build the product system."
+            price="$6,500"
             duration="4–6 weeks"
             features={buildFeatures}
             ctaText="Book a 15-min call"
@@ -116,9 +112,9 @@ export default function ModulabPricingCard() {
         {/* Build + Launch Kit */}
         <div className="w-full md:w-[380px] md:shrink-0 flex">
           <PricingPlanCard
-            title="Build + Launch Kit"
-            description="For founders who want the app + a clean launch surface."
-            price="$12,000"
+            title="Build + Launch"
+            description="Product system plus public launch."
+            price="$9,500"
             duration="5–7 weeks"
             features={buildLaunchKitFeatures}
             ctaText="Book a 15-min call"
@@ -128,21 +124,20 @@ export default function ModulabPricingCard() {
         </div>
       </div>
 
-      {/* Ongoing Product Partnership */}
-      <div className="flex flex-col items-center w-full pt-3xl border-t border-dashed-clean">
-        <div className="w-full lg:w-auto lg:max-w-[560px] flex flex-col gap-xl items-center text-center pt-3xl">
-          <h3 className="font-heading text-xl font-semibold tracking-tight" style={{ letterSpacing: '-0.02em', color: colors.text.primary }}>
-            Ongoing Product Partnership
+      {/* Phase 0 — bottom */}
+      <div className="flex flex-col items-center text-center pt-3xl border-t border-dashed-clean">
+        <div className="w-full max-w-[480px] flex flex-col gap-lg pt-3xl">
+          <h3 className="font-heading text-lg font-semibold tracking-tight" style={{ letterSpacing: '-0.02em', color: colors.text.primary }}>
+            Phase zero
           </h3>
-          <p className="text-sm font-normal leading-relaxed" style={{ letterSpacing: '0em', color: colors.text.secondary }}>
-            Weekly shipping cadence. Design + engineering leadership to iterate, improve performance, and expand product surface without hiring a team.
+          <p className="text-sm font-normal" style={{ color: colors.text.secondary }}>
+            $1,500–$2,000 · 1 week. Scope + architecture. Credited toward a full build.
           </p>
-          <p className="text-sm font-medium" style={{ color: colors.text.primary }}>
-            Product engagements from $9,000/month
-          </p>
-          <p className="text-xs font-normal" style={{ color: colors.text.tertiary }}>
-            Early-stage pilot engagements available · Limited to 1–2 active partnerships
-          </p>
+          <div className="flex justify-center">
+            <SecondaryButton href="https://cal.com/modul-lab-9hvki1/sales-meeting" target="_blank" rel="noopener noreferrer" trackLabel="Phase 0">
+              Book a call
+            </SecondaryButton>
+          </div>
         </div>
       </div>
     </div>

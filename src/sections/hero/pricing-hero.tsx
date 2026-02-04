@@ -1,7 +1,7 @@
 import { motion } from 'motion/react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { usePostHog } from 'posthog-js/react'
 import Logo from '../../components/logo'
-import PrimaryButton from '../../components/primary-button'
 import { colors } from '../../tokens'
 
 const processSteps = [
@@ -17,6 +17,9 @@ const processSteps = [
  * Calm, structured positioning — product engineering leadership
  */
 export default function PricingHero() {
+  const posthog = usePostHog()
+  const location = useLocation()
+
   const getNavLinkClasses = (isActive: boolean) => {
     const baseClasses = "font-label text-xs font-light tracking-wider leading-[1.5] no-underline uppercase cursor-pointer transition-colors duration-200"
     
@@ -36,10 +39,18 @@ export default function PricingHero() {
       <div className="flex items-center lg:justify-start pt-lg pb-lg px-lg border-b border-dashed-clean">
         <Logo />
         <nav className="ml-auto flex flex-row gap-6 items-center" aria-label="Navigation">
-          <Link to="/" className={getNavLinkClasses(false)}>
+          <Link
+            to="/"
+            className={getNavLinkClasses(location.pathname === '/')}
+            onClick={() => posthog?.capture('Nav Clicked', { destination: 'Work', path: '/' })}
+          >
             Work
           </Link>
-          <Link to="/pricing" className={getNavLinkClasses(true)}>
+          <Link
+            to="/pricing"
+            className={getNavLinkClasses(location.pathname === '/pricing')}
+            onClick={() => posthog?.capture('Nav Clicked', { destination: 'Pricing', path: '/pricing' })}
+          >
             Pricing
           </Link>
         </nav>
@@ -118,17 +129,6 @@ export default function PricingHero() {
               </motion.div>
             ))}
           </div>
-
-          <motion.div 
-            className="pt-lg"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.8 }}
-          >
-            <PrimaryButton href="https://cal.com/modul-lab-9hvki1/sales-meeting" target="_blank" rel="noopener noreferrer">
-              Book intro call
-            </PrimaryButton>
-          </motion.div>
         </div>
       </div>
     </div>

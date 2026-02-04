@@ -1,4 +1,5 @@
 import React, { type ReactNode, useRef, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { Library, SquareBottomUp } from '@solar-icons/react'
 import { animate } from 'animejs'
 import { usePostHog } from 'posthog-js/react'
@@ -6,9 +7,11 @@ import { colors } from '../tokens/colors'
 
 interface SecondaryButtonProps {
   href?: string
+  to?: string
   children: ReactNode
   className?: string
   trackLabel?: string
+  disableHover?: boolean
   [key: string]: any
 }
 
@@ -17,9 +20,11 @@ interface SecondaryButtonProps {
  */
 export default function SecondaryButton({ 
   href, 
+  to,
   children, 
   className = '', 
   trackLabel,
+  disableHover = false,
   ...props 
 }: SecondaryButtonProps) {
   const posthog = usePostHog()
@@ -34,6 +39,8 @@ export default function SecondaryButton({
   }
 
   useEffect(() => {
+    if (disableHover) return
+    
     const button = buttonRef.current
     const iconLeft = iconLeftRef.current
     const iconRight = iconRightRef.current
@@ -81,9 +88,9 @@ export default function SecondaryButton({
       button.removeEventListener('mouseenter', handleMouseEnter)
       button.removeEventListener('mouseleave', handleMouseLeave)
     }
-  }, [])
+  }, [disableHover])
 
-  const baseClasses = "inline-flex items-center w-auto pt-[12px] pr-[20px] pb-[12px] pl-[18px] rounded-lg no-underline transition-all duration-200 ease-out hover:scale-[1.02] active:scale-[0.98] font-body text-xs font-medium leading-none cursor-pointer text-primary-600 gap-2"
+  const baseClasses = "inline-flex items-center w-auto pt-[12px] pr-[20px] pb-[12px] pl-[18px] rounded-lg overflow-hidden no-underline transition-all duration-200 ease-out hover:scale-[1.02] active:scale-[0.98] font-body text-xs font-medium leading-none cursor-pointer text-primary-600 gap-2 outline-none focus:outline-none focus-visible:outline-none border-0"
   const combinedClass = `${baseClasses} ${className}`.trim()
   const buttonStyle = { background: colors.gradient.surface }
 
@@ -100,6 +107,14 @@ export default function SecondaryButton({
       <span className="text-xs font-medium leading-none">{children}</span>
     </>
   )
+
+  if (to) {
+    return (
+      <Link ref={buttonRef as React.RefObject<HTMLAnchorElement>} to={to} className={combinedClass} style={buttonStyle} onClick={handleClick} {...props}>
+        {content}
+      </Link>
+    )
+  }
 
   if (href) {
     return (

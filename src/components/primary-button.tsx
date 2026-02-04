@@ -9,6 +9,7 @@ interface PrimaryButtonProps {
   children: ReactNode
   className?: string
   trackLabel?: string
+  disableHover?: boolean
   [key: string]: any
 }
 
@@ -20,6 +21,7 @@ export default function PrimaryButton({
   children, 
   className = '', 
   trackLabel,
+  disableHover = false,
   ...props 
 }: PrimaryButtonProps) {
   const posthog = usePostHog()
@@ -34,6 +36,8 @@ export default function PrimaryButton({
   }
 
   useEffect(() => {
+    if (disableHover) return
+    
     const button = buttonRef.current
     const iconTop = iconTopRef.current
     const iconBottom = iconBottomRef.current
@@ -81,9 +85,9 @@ export default function PrimaryButton({
       button.removeEventListener('mouseenter', handleMouseEnter)
       button.removeEventListener('mouseleave', handleMouseLeave)
     }
-  }, [])
+  }, [disableHover])
 
-  const baseClasses = "group relative inline-flex items-center pt-[12px] pr-[20px] pb-[12px] pl-[18px] min-h-[38px] rounded-lg no-underline transition-all duration-200 ease-out shadow-[0_2px_4px_rgba(0,0,0,0.12)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:scale-[1.02] active:scale-[0.98] font-body text-xs font-medium leading-none cursor-pointer text-white gap-2 w-fit"
+  const baseClasses = "group relative inline-flex items-center justify-center pt-[12px] pr-[20px] pb-[12px] pl-[18px] min-h-[38px] rounded-lg overflow-hidden no-underline transition-all duration-200 ease-out shadow-[0_2px_4px_rgba(0,0,0,0.12)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:scale-[1.02] active:scale-[0.98] font-body text-xs font-medium leading-none cursor-pointer text-white gap-2 w-fit outline-none focus:outline-none focus-visible:outline-none border-0"
   const combinedClass = `${baseClasses} ${className}`.trim()
   const buttonStyle = { background: colors.gradient.primary }
 
